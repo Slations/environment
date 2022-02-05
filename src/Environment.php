@@ -18,17 +18,15 @@ class Environment {
     
     // Set the connection value
     protected $database;
-    protected $user_id;
 
     // Construct
-    public function __construct($db, $user_id) {
+    public function __construct($db) {
 		$this->database = $db;
-        $this->user_id = $user_id;
 	}
 
     // Create an environment
 
-    public function create($name) {
+    public function create($name, $user_id) {
         global $dbconn;        
         
         // Gets the user id from database
