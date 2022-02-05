@@ -40,7 +40,7 @@ class Environment {
         $id = \Ramsey\Uuid\Uuid::uuid4()->toString();
 
         // Create the environment
-        self::$database->insert("users", [
+        $this->database->insert("users", [
             "id" => $id,
             "name" => $name,
             "created_by" => $user['id'],
@@ -48,7 +48,7 @@ class Environment {
         ]);
 
         // Create the user permissions
-        self::$database->insert("permissions", [
+        $this->database->insert("permissions", [
             "user" => $user['id'],
             "environment" => $id,
             "administration" => 3,
