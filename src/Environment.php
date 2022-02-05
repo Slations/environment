@@ -40,7 +40,7 @@ class Environment {
         $id = \Ramsey\Uuid\Uuid::uuid4()->toString();
 
         // Create the environment
-        $this->database->insert("users", [
+        $this->database->insert("environments", [
             "id" => $id,
             "name" => $name,
             "created_by" => $user['id'],
